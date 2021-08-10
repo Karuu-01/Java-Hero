@@ -10,7 +10,7 @@ A hero can however not belong to more than one squad but a squad can contain as 
 ## Author's Information
 This project was developed by Brian Karu.
 
-Click on (Karuu)[https://github.com/Karuu-01] to find the link to my Github Site.
+Click on [Karuu](https://github.com/Karuu-01) to find the link to my Github Site.
 
 ## Demo
 Here is a working live demo :
@@ -37,4 +37,4 @@ Here is a working live demo :
 - Phone : +254 706844439
 
 ## License
-MIT © Brian Kary
+[MIT](license) © Brian Karu
