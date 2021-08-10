@@ -37,4 +37,4 @@ Here is a working live demo :
 - Phone : +254 706844439
 
 ## License
-[MIT](license) © Brian Karu
+[MIT](License) © Brian Karu
