@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'hero'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.8.0-alpha2'
+    implementation group: 'com.sparkjava', name: 'spark-core', version: '2.9.3'
+    implementation group: 'com.github.jknack', name: 'handlebars', version: '4.2.0'
+    implementation 'org.sql2o:sql2o:1.6.0'
+    testImplementation group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
+    // ADD ME FOR POSTGRES VERSION 9.x
+    testImplementation group: 'org.postgresql', name: 'postgresql', version: '42.2.23.jre7'
+    // ADD ME FOR POSTGRES VERSION 10.x
+}
+test {
+    useJUnitPlatform()
+}
