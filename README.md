@@ -1,7 +1,7 @@
 ## App-Name
 Hero-Squad App
 ## Project Description
-Heroes-Squad App is an App that enables a user to recruit a team of superheroes.
+Hero-Squad App is an App that enables a user to recruit a team of superheroes.
 
 The user may create as many heroes as possible and also create squads and assign heroes to these squads.
 
