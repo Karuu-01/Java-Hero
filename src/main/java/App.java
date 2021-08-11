@@ -41,12 +41,28 @@ public class App {
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
+
+        //CREATE A NEW HERO
+        get("/hero", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            ArrayList<Hero> heroes = Hero.getAllInstances();
+            model.put("hero", heroes);
+            return new ModelAndView(model, "hero.hbs");
+        }, new HandlebarsTemplateEngine());
+
         //DELETE A HERO
         get("/hero/delete", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Hero.clearAllHero();
             model.put("hero", Hero.getAllInstances());
             return new ModelAndView(model, "hero.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //CREATE A NEW SQUAD
+        get("/squad", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("squad", Squad.getSquadInstances());
+            return new ModelAndView(model, "squad.hbs");
         }, new HandlebarsTemplateEngine());
 
         //GET A NEW SQUAD
