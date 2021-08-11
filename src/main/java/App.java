@@ -26,7 +26,7 @@ public class App {
         //GET INFO OF HEROES THROUGH A FORM
         get("/hero/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model, "form.hbs");
+            return new ModelAndView(model, "heroForm.hbs");
         }, new HandlebarsTemplateEngine());
 
         //POST THE INFO ABOUT THE HEROES GENERATED THROUGH THE FORM
@@ -99,7 +99,7 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
         //GET SQUADS BY ID
-        get("/squads/id", (request, response) -> {
+        get("/squad/id", (request, response) -> {
             Map<String,Object> model = new HashMap<>();
             int idToFindSquad = Integer.parseInt(request.params(":id"));
             Squad searchSquad = Squad.findById(idToFindSquad);

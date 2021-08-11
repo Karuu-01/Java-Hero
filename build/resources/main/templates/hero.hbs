@@ -1,0 +1,41 @@
+{{#partial "content"}}
+
+    <h2>LIST OF HEROES</h2>
+
+        {{#if hero}}
+
+            {{#each hero}}
+
+                <div class="card mb-3" id="hero">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img id="heroImage" src="/images/spiderman.jpeg" alt="Hero Image">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{name}}</h5>
+                                <hr>
+                                <ul class="card-text">
+                                    <li><span>Age: </span>{{age}}</li>
+                                    <li><span>Power: </span>{{power}}</li>
+                                    <li><span>Weakness: </span>{{weakness}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {{/each}}
+
+        {{else}}
+            <p id="noHeroes">No Heroes Available!</p>
+        {{/if}}
+
+        {{#if heroes}}
+            <a href="/hero/delete"><button class="btn-info">Delete All Heroes</button></a>
+        {{/if}}
+
+
+{{/partial}}
+
+{{> layout.hbs}}

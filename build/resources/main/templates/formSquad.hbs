@@ -1,0 +1,52 @@
+{{#partial "content"}}
+
+
+    <h2>CREATE A SQUAD TO PUT YOUR NEW HERO</h2>
+    <form action="/squad" method="post">
+        <div class="form-group">
+            <label for="squadName">Name</label>
+            <input type="text" class="form-control" name="squadName" id="squadName" placeholder="Name of the squad" required>
+        </div>
+
+        <div class="form-group">
+            <label for="squadPurpose">Cause</label>
+            <input type="text" class="form-control" name="squadPurpose" id="squadPurpose" placeholder="What does this squad fight against?" required>
+        </div>
+
+        <div class="form-group">
+            <label for="squadSize">Size Limit</label>
+            <input type="number" class="form-control" name="squadSize" id="squadSize" placeholder="How many heroes should be in this squad?" required>
+        </div>
+
+        <div class="form-group">
+            <label for="squadHero">Available Heroes</label>
+
+            {{#if hero}}
+                {{#each hero}}
+                    {{#if squadMember}}
+
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="squadHero" id={{id}} value={{id}} disabled>
+                            <label class="form-check-label" for="squadHero">
+                                {{name}}
+                            </label>
+                        </div>
+
+                    {{else}}
+
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="squadHero" id={{id}} value={{id}}>
+                            <label class="form-check-label" for="squadHero">
+                                {{name}}
+                            </label>
+                        </div>
+
+                    {{/if}}
+
+                {{/each}}
+            {{else}}
+
+                <p>Oops, it appears there aren't enough heroes. Create more heroes <a href="/hero/new" style="text-decoration: none;">here</a>.</p>
+
+            {{/if}}
+        </div>
